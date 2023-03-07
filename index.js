@@ -26,10 +26,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "client", "build")));
 
-app.use("/api/auth", authRouter);
-app.use("/api/users", userRouter);
-app.use("/api/posts", postRouter);
-app.use("/api/comments", commentRouter);
+app.use("/auth", authRouter);
+app.use("/users", userRouter);
+app.use("/posts", postRouter);
+app.use("/comments", commentRouter);
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
